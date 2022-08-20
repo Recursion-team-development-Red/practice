@@ -1,0 +1,18 @@
+def appearTheMost(levels):
+    # 関数を完成させてください
+    hashmap = {}
+    result = []
+
+    for key in levels:
+        if key not in hashmap:
+            hashmap[key] = 1
+        else:
+            hashmap[key] += 1
+    
+    maxValue = max(hashmap.values())
+
+    for i in hashmap:
+        if maxValue == hashmap[i]:
+            result.append(i)
+    
+    return sorted(result)
